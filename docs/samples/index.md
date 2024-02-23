@@ -14,10 +14,12 @@
 | Usage | Images     | Python Notebook                       | [Plot custom bounding boxes](https://github.com/microsoft/presidio/blob/main/docs/samples/python/plot_custom_bboxes.ipynb)
 | Usage | Text     | Python Notebook                       | [Integrating with external services](https://github.com/microsoft/presidio/blob/main/docs/samples/python/integrating_with_external_services.ipynb) |
 | Usage | Text       | Python file                               | [Remote Recognizer](https://github.com/microsoft/presidio/blob/main/docs/samples/python/example_remote_recognizer.py) |
+| Usage | Structured     | Python Notebook                       | [Presidio Structured Basic Usage Notebook](https://github.com/microsoft/presidio/blob/main/docs/samples/python/example_structured.ipynb) |
 | Usage | Text      | Python file                               | [Azure AI Language as a Remote Recognizer](python/text_analytics/index.md)  |
 | Usage | CSV       | Python file                               | [Analyze and Anonymize CSV file](https://github.com/microsoft/presidio/blob/main/docs/samples/python/process_csv_file.py) |
 | Usage | Text      | Python                                | [Using Flair as an external PII model](https://github.com/microsoft/presidio/blob/main/docs/samples/python/flair_recognizer.py)|
 | Usage | Text      | Python file                               | [Using Transformers as an external PII model](python/transformers_recognizer/index.md)|
+| Usage | Text      | Python file                               | [Pseudonomization (replace PII values using mappings)](https://github.com/microsoft/presidio/blob/main/docs/samples/python/pseudonomyzation.ipynb)|
 | Usage | Text      | Python file                               | [Passing a lambda as a Presidio anonymizer using Faker](https://github.com/microsoft/presidio/blob/main/docs/samples/python/example_custom_lambda_anonymizer.py)|
 | Usage      | | REST API (postman)                    | [Presidio as a REST endpoint](docker/index.md)|
 | Deployment | | App Service                           | [Presidio with App Service](deployments/app-service/index.md)|

@@ -2,6 +2,80 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+
+### Added
+#### Analyzer
+#### Anonymizer
+#### Image redactor
+#### Structured
+
+
+### Changed
+
+### Removed
+
+
+## [2.2.353] - Feb 12th 2024
+
+### Added
+#### Analyzer
+* Add predefined_recognizer: IN_AADHAAR (#1256)
+
+#### Anonymizer
+* Added the option to add custom operators + pseudonymization sample (#1284)
+
+### Changed
+
+#### Analyzer
+* Fix failing test due to optional package (#1258)
+* Update publish-to-pypi.yml (#1259)
+* Allow local Spacy Models to be loaded in NLP Engine (#1269)
+* Upgrade pip in windows containers (#1272)
+
+#### Image Redactor
+* Bugfix in ImageAnalyzerEngine  #1274
+
+
+## [2.2.352] - Jan 22nd 2024
+### Added
+#### Structured
+* Added alpha of presidio-structured, a library (presidio-structured) which re-uses existing logic from existing presidio components to allow anonymization of (semi-)structured data. (#1192)
+
+#### Analyzer
+* Add PL PESEL recognizer (#1209)
+* Azure AI language recognizer (#1228)
+* Add_conf_to_package_data (#1243)
+
+#### Anonymizer
+* Add keep operator as deanonymizer (#1255)
+* Update anonymize_list type hints and document that sometimes items will be ignored. (#1252)
+
+
+#### General
+* Add Dockerfile for Windows containers (#1194)
+
+### Changed
+#### Analyzer
+* Drop WA driver license number (#1214)
+* Change ner_model_configuration from list to map (#1222)
+* Bugfix in SpacyRecognizer (#1221)
+* Bugfix in NerModelConfiguration (#1230)
+* Add_conf_to_package_data (#1243)
+
+#### Anonymizer
+* Improved the logic of conflict handling in AnonymizerEngine (#1196)
+
+#### Image Redactor
+* Change default score threshold in image redactor (#1210)
+* fixes bug #1227 (#1231)
+* Added missing dependencies for opencv-python and azure forms recognizer (#1257)
+
+#### General
+* Remove inclusive-lint step (#1207)
+* Updates to demo website with new NLP Engine (#1181)
+
+
 ## [2.2.351] - Nov. 6th 2024
 ### Changed
 #### Analyzer
@@ -16,6 +90,7 @@ All notable changes to this project will be documented in this file.
 ### Changed
 #### Analyzer
 * Put org in ignore as it has many FPs (#1200)
+
 
 ## [2.2.34] - Oct. 30th 2024
 
@@ -65,7 +140,6 @@ All notable changes to this project will be documented in this file.
 * We no longer use Pipenv.lock. Locking happens as part of the CI. (#1152)
 * Changed the ACR instance (#1089)
 * Updated to Cred Scan V3 (#1154) 
-
 
 ## [2.2.33] - June 1st 2023
 ### Added
@@ -301,7 +375,9 @@ Upgrade Analyzer spacy version to 3.0.5
 #### Deanonymize:
 New endpoint for deanonymizing encrypted entities by the anonymizer.
 
-[unreleased]: https://github.com/microsoft/presidio/compare/2.2.351...HEAD
+[unreleased]: https://github.com/microsoft/presidio/compare/2.2.353...HEAD
+[2.2.353]: https://github.com/microsoft/presidio/compare/2.2.352...2.2.353
+[2.2.352]: https://github.com/microsoft/presidio/compare/2.2.351...2.2.352
 [2.2.351]: https://github.com/microsoft/presidio/compare/2.2.350...2.2.351
 [2.2.350]: https://github.com/microsoft/presidio/compare/2.2.35...2.2.350
 [2.2.35]: https://github.com/microsoft/presidio/compare/2.2.34...2.2.35
