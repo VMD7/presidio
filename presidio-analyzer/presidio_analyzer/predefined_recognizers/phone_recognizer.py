@@ -18,11 +18,14 @@ class PhoneRecognizer(LocalRecognizer):
     :param context: Base context words for enhancing the assurance scores.
     :param supported_language: Language this recognizer supports
     :param supported_regions: The regions for phone number matching and validation
+    :param leniency: The strictness level of phone number formats.
+    Accepts values from 0 to 3, where 0 is the lenient and 3 is the most strictest.
     """
 
     SCORE = 0.4
     CONTEXT = ["phone", "number", "telephone", "cell", "cellphone", "mobile", "call"]
     DEFAULT_SUPPORTED_REGIONS = ("US", "UK", "DE", "FE", "IL", "IN", "CA", "BR")
+    DEFAULT_LENIENCY = 1
 
     def __init__(
         self,
@@ -30,9 +33,11 @@ class PhoneRecognizer(LocalRecognizer):
         supported_language: str = "en",
         # For all regions, use phonenumbers.SUPPORTED_REGIONS
         supported_regions=DEFAULT_SUPPORTED_REGIONS,
+        leniency: Optional[int] = DEFAULT_LENIENCY,
     ):
         context = context if context else self.CONTEXT
         self.supported_regions = supported_regions
+        self.leniency = leniency
         super().__init__(
             supported_entities=self.get_supported_entities(),
             supported_language=supported_language,
@@ -59,7 +64,8 @@ class PhoneRecognizer(LocalRecognizer):
         """
         results = []
         for region in self.supported_regions:
-            for match in phonenumbers.PhoneNumberMatcher(text, region, leniency=1):
+            for match in phonenumbers.PhoneNumberMatcher(text, region,
+                                                         leniency=self.leniency):
                 results += [
                     self._get_recognizer_result(match, text, region, nlp_artifacts)
                 ]
